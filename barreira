@@ -1,0 +1,110 @@
+#include <iostream>
+#include <thread>
+#include <chrono>
+#include <mutex>
+#include <vector>
+#include <cassert>
+#include <condition_variable>
+
+
+using namespace std;
+
+class Barrier {
+
+    private:
+        /* Ponto de sincronização. contador de threads igual a 0 */
+        static const int SYNC_POINT = 0;
+
+        /* Número de threads que devem chegar até a barreira */
+        unsigned int threads_counter;
+
+        /* Mutex de controle de parada das threads */
+        mutex mtx;
+
+        /* Variável condicional que notifica as threads */
+        condition_variable ready;
+
+    public:
+        /*
+         * Construtor da classe que atribui ao contador o número de threads
+         * participantes da sincronização.
+         */
+        Barrier (unsigned int n_threads) {
+
+            assert(n_threads > 0);
+            threads_counter = n_threads;
+        }
+
+        /*
+         * Bloqueia a thread caso ainda existam threads para alcançar a
+         * barreira. Ao final notifica todas para que elas acordem e continuem
+         * sua execução.
+         */
+        void wait () {
+
+            unique_lock<mutex> lock(mtx);
+
+            if(--threads_counter == SYNC_POINT) {
+                ready.notify_all();
+            } else {
+                ready.wait(lock);
+            }
+        }
+};
+
+
+class SimpleThread {
+
+    private:
+        /* Barreira de execução */
+        Barrier *barrier;
+
+        /*
+         * Entra em espera por um período de tempo entre 0 e 5 segundos. Ao
+         * final imprime uma mensagem com o número da thread atual
+         */
+        void HelloMessage (int thread_no) {
+
+            this_thread::sleep_for(chrono::milliseconds(rand() % 5000));
+
+            barrier->wait();
+
+            cout << "Hello from thread: " << thread_no << endl;
+        }
+
+    public:
+        SimpleThread () {
+
+            barrier = new Barrier(N_THREADS);
+        }
+
+        /* Número máximo de threads */
+        static const int N_THREADS = 20;
+
+        /*
+         * Cria uma thread através do módulo std::thread do C++
+         */
+        thread *spawn (int thread_no) {
+            return new thread(&SimpleThread::HelloMessage, this, thread_no);
+        }
+};
+
+int
+main (int argc, char* argv[])
+{
+    /* Cria-se um objeto simples da nossa classe de Threads */
+    SimpleThread *simple_thread = new SimpleThread();
+    /* Um array para controlar a lista de threads abertas */
+    vector<thread *> threads(SimpleThread::N_THREADS);
+
+    /* Cria uma thread para cada elemento do array */
+    for(int i = 0; i < SimpleThread::N_THREADS; i++) {
+        threads[i] = simple_thread->spawn(i);
+    }
+    /* Para cada thread aguarda o final de sua execução */
+    for(int i = 0; i < SimpleThread::N_THREADS; i++) {
+        threads[i]->join();
+    }
+
+    return EXIT_SUCCESS;
+}
