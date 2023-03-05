@@ -1,4 +1,4 @@
-# aulas
+# HPC
 Repositório de códigos utilizados como exemplo na disciplina de HPC
 
 Em nossas aulas vamos utilizar o SO Linux, mais precisamente o Ubuntu Server, mas pode ser qualquer outra distribuição baseada no Debian.
