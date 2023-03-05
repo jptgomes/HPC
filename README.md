@@ -12,17 +12,15 @@ nano helloworld.c
 
 #include <stdio.h>
 
-/* Nosso primeiro teste*/
-
 int main()
 
 {
 
-printf(“Hello, world!\n”);
+printf ("Hello, world!\n");
 
 return 0;
 
-}    
+}
 
 
 Salve o arquivo.
