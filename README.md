@@ -6,7 +6,7 @@ O Linux é o melhor SO para programação em C. Sua estabilidade, leveza e segur
 Vamos usar seu compilador  GCC para os códigos exemplo nas disciplinas de HPC e SD.
 O GCC está nativo nas distribuições Linux (maioria pelo menos), mas se for necessário instalar,  digite o seguinte comando:  apt-get install gcc
 
-Vamos testar e compilar o primeiro código de teste. Abra o terminal e crie um arquivo:
+Vamos compilar o primeiro código teste/exemplo. Abra o terminal e crie um arquivo:
 
 nano helloworld.c
 
