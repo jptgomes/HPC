@@ -1,5 +1,5 @@
 # aulas
-Repositório de códigos utilizados como exemplo em aulas
+Repositório de códigos utilizados como exemplo na disciplina de HPC
 
 Em nossas aulas vamos utilizar o SO Linux, mais precisamente o Ubuntu Server, mas pode ser qualquer outra distribuição baseada no Debian.
 O Linux é o melhor SO para programação em C. Sua estabilidade, leveza e segurança são incomparáveis em relação aos outros sistemas operacionais.
