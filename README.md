@@ -2,14 +2,15 @@
 
 
 Repositório de Códigos – Disciplina de HPC
+	
 	Em nossas aulas utilizaremos o sistema operacional Linux, preferencialmente o Ubuntu Server, embora qualquer distribuição baseada em Debian (ou outra distribuição Linux) possa ser utilizada.
 	O Linux é amplamente adotado em ambientes de Computação de Alto Desempenho (HPC) devido à sua:
 
-    • Estabilidade
-    • Desempenho
-    • Segurança
-    • Flexibilidade
-    • Amplo suporte a compiladores e bibliotecas científicas
+	• Estabilidade
+	• Desempenho
+	• Segurança
+	• Flexibilidade
+	• Amplo suporte a compiladores e bibliotecas científicas
 
 	Utilizaremos o compilador GCC (GNU Compiler Collection) para códigos em C e o g++ para códigos em C++.
 	Na maioria das distribuições Linux, o GCC já vem instalado. Caso não esteja disponível, pode ser instalado com:
@@ -22,18 +23,20 @@ sudo apt install build-essential
     • g++ (compilador C++)
     • make
     • bibliotecas padrão
+
 Exemplo – Hello World em C
+	
 	Abra o terminal e crie um arquivo:
 
 nano helloworld.c
 
 	Insira o seguinte código:
 
-#include <stdio.h>
-int main() {
-    printf("Olá, mundo!\n");
-    return 0;
-}
+				#include <stdio.h>
+				int main() {
+				    printf("Olá, mundo!\n");
+				    return 0;
+				}
 
 	Salve o arquivo.
 
@@ -46,7 +49,7 @@ gcc helloworld.c -o helloworld
 	Onde:
     • helloworld.c → arquivo fonte
     • -o helloworld → nome do executável gerado
-    • 
+	
 Para executar: ./helloworld
 
 Exemplo equivalente em C++
@@ -54,11 +57,11 @@ Exemplo equivalente em C++
 	Crie o arquivo: nano helloworld.cpp
 	Código:
 
-#include <iostream>
-int main() {
-    std::cout << "Olá, mundo!" << std::endl;
-    return 0;
-}
+					#include <iostream>
+					int main() {
+					    std::cout << "Olá, mundo!" << std::endl;
+					    return 0;
+					}
 
 	Compilação (C++ – g++)
 
