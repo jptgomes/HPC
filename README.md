@@ -1,8 +1,8 @@
-##🖥 Repositório de Códigos – Disciplina de HPC
+#🖥 Repositório de Códigos – Disciplina de HPC
 
 Este repositório contém os códigos utilizados como exemplo na disciplina de Computação de Alto Desempenho (HPC).
 
-##🐧 Ambiente Utilizado
+#🐧 Ambiente Utilizado
 
 Durante as aulas utilizaremos o sistema operacional Linux, preferencialmente o Ubuntu Server, embora qualquer distribuição baseada em Debian (ou outra distribuição Linux) possa ser utilizada.
 
@@ -15,7 +15,7 @@ O Linux é amplamente adotado em ambientes de HPC devido à sua:
 
 Amplo suporte a compiladores e bibliotecas científicas
 
-##🔧 Compiladores
+#🔧 Compiladores
 
 Utilizaremos o compilador GCC (GNU Compiler Collection) para códigos em C e o g++ para códigos em C++.
 
@@ -84,7 +84,7 @@ g++ arquivo.cpp -o programa -pthread
 
 A opção -pthread habilita suporte adequado a multithreading no Linux.
 
-##🎯 Objetivo
+#🎯 Objetivo
 
 Com esses passos você possui o básico necessário para:
 
