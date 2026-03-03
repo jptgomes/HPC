@@ -1,10 +1,12 @@
 # 🖥 Repositório de Códigos – Disciplina de HPC
 
-    Este repositório contém os códigos utilizados como exemplo na disciplina de **Computação de Alto Desempenho (HPC)**.
+    Este repositório contém os códigos utilizados como exemplo na disciplina de 
+**Computação de Alto Desempenho (HPC)**.
 
 ## 🐧 Ambiente Utilizado
 
-    Durante as aulas utilizaremos o sistema operacional **Linux**, preferencialmente o **Ubuntu Server**, embora qualquer distribuição baseada em Debian (ou outra distribuição Linux) possa ser utilizada.
+    Durante as aulas utilizaremos o sistema operacional **Linux**, preferencialmente o **Ubuntu Server**, 
+embora qualquer distribuição baseada em Debian (ou outra distribuição Linux) possa ser utilizada.
 
     O Linux é amplamente adotado em ambientes de HPC devido à sua:
 
@@ -16,12 +18,12 @@
 
 ## 🔧 Compiladores
 
-    Utilizaremos o compilador **GCC (GNU Compiler Collection)** para códigos em C e o **g++** para códigos em C++.
+    Utilizaremos o compilador **GCC (GNU Compiler Collection)** para códigos em C e o **g++** 
+para códigos em C++. Na maioria das distribuições Linux, o GCC já vem instalado. 
+    Caso não esteja disponível, pode ser instalado com:
 
-    Na maioria das distribuições Linux, o GCC já vem instalado. Caso não esteja disponível, pode ser instalado com:
-
-sudo apt update
-sudo apt install build-essential
+- sudo apt update
+- sudo apt install build-essential
 
     O pacote build-essential instala:
 
@@ -30,7 +32,7 @@ sudo apt install build-essential
 - make
 - Bibliotecas padrão de desenvolvimento
 
-📌 Exemplo 1 – Hello World em C
+**📌 Exemplo 1 – Hello World em C**
 
     Crie o arquivo:
 
@@ -45,23 +47,22 @@ int main() {
     return 0;
 }
 
-▶ Compilação (C – gcc)
+**▶ Compilação (C – gcc)**
 
-gcc helloworld.c -o helloworld
+    gcc helloworld.c -o helloworld
 
 Onde:
 
-**  helloworld.c → arquivo fonte
-**  -o helloworld → nome do executável gerado
+- helloworld.c → arquivo fonte
+- -o helloworld → nome do executável gerado
 
-▶ Execução: ./helloworld
-📌 Exemplo 2 – Hello World em C++
+    ▶ Execução: ./helloworld
 
-Crie o arquivo:
+**📌 Exemplo 2 – Hello World em C++**
 
-nano helloworld.cpp
+Crie o arquivo: nano helloworld.cpp
 
-Código:
+    Código:
 
 #include <iostream>
 
@@ -70,9 +71,9 @@ int main() {
     return 0;
 }
 
-▶ Compilação (C++ – g++)
+**▶ Compilação (C++ – g++)**
 
-g++ helloworld.cpp -o helloworld
+    g++ helloworld.cpp -o helloworld
 
 ▶ Execução: ./helloworld
 
@@ -84,7 +85,7 @@ g++ arquivo.cpp -o programa -pthread
 
     A opção -pthread habilita suporte adequado a multithreading no Linux.
 
-🎯 Objetivo
+**🎯 Objetivo**
 
     Com esses passos você possui o básico necessário para:
 
