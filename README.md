@@ -37,12 +37,14 @@ O pacote build-essential instala:
 
     Insira o código:
 
+```c
 #include <stdio.h>
 
 int main() {
     printf("Olá, mundo!\n");
     return 0;
 }
+```
 
 **▶ Compilação (C – gcc)**
 
